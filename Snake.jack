@@ -1,4 +1,11 @@
-class Snake {
+/**
+ * Snake Class:
+ * Represents the snake in a game environment.
+ * Manages the snake's position, length, direction, and movements.
+ * Allows growth, checking boundaries, and interacting with the game grid.
+ */
+ 
+ class Snake {
 
     // the game the snake is playing in
     field SnakeGame game;

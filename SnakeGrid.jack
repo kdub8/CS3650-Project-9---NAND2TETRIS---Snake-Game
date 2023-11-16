@@ -1,11 +1,32 @@
-// the Snake game grid.  Hack's screen is 512x256 pixels, but a single
-// pixel is too fine for a user to control, so we use 4x4 pixel blocks,
-// turning the screen into a 128x64 grid we also need a status line.  The
-// Hack screen can have 23x64 characters of text, so each line takes a
-// bit over 11 pixels.  We reserve the bottom 16 pixels, leaving 512x240
-// for game use
-
-class SnakeGrid {
+/**
+ * SnakeGrid represents the grid where the SnakeGame is played. 
+ * It manages the game's elements including the grid size, food placement, 
+ * snake positioning, and drawing functionalities.
+ * 
+ * Fields:
+ * - game: Reference to the SnakeGame instance.
+ * - sizeX, sizeY: Dimensions of the grid.
+ * - foodX, foodY: XY position of the food pellet.
+ * - grid: A two-dimensional array representing the snake's position.
+ * 
+ * Constructor:
+ * - Initializes a new SnakeGrid instance given a SnakeGame reference and grid dimensions.
+ * 
+ * Methods:
+ * - dispose: Releases resources associated with the SnakeGrid.
+ * - placeFood: Selects a position for and draws a food pellet avoiding the snake's position.
+ * - drawFood: Draws the food pellet on the screen.
+ * - initGrid: Initializes the grid and draws the separating line between game and status area.
+ * - Various reader methods for grid dimensions, food position, and grid status.
+ * - Grid access methods for setting and checking occupied positions.
+ * - Debugging methods to display current game state on the status line.
+ * - Methods to draw various game status messages such as "PAUSED," "DONE," and "CRASHED."
+ * - Methods to draw and clear snake elements on the grid.
+ * - drawStatus: Draws the status line with game level, score, length, and pause indication.
+ * - drawPaused, clearPaused, drawDone, drawCrashed: Methods to draw specific game states on the status line.
+ */
+ 
+ class SnakeGrid {
 
     // the game the snake is playing in
     field SnakeGame game;

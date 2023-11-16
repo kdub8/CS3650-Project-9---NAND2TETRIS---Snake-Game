@@ -1,3 +1,46 @@
+/**
+ * RandSeed class generates a seed value based on user input.
+ * 
+ * Functions:
+ *   - getSeed(): Generates a seed value by continuously incrementing 
+ *                a variable until a key is pressed. The seed value 
+ *                resets to 0 after reaching the maximum value of 32767.
+ *                Displays a prompt to start the process and clears the screen 
+ *                once a key is pressed.
+ * 
+ * Fields:
+ *   - seed (int): Stores the generated seed value.
+ *   - key (int): Stores the current pressed key.
+ * 
+ * Usage:
+ *   - Call the getSeed() function to obtain a seed value based on user input.
+ */
+class RandSeed {
+    function int getSeed() {
+        var int seed;
+        var int key;
+
+        let seed = 0;
+        let key = 0;
+
+        do Output.printString("press a key to start");
+        do Output.println();
+
+        while(~key) {
+            let seed = seed + 1;
+            if( seed = 32767 ) {
+                let seed = 0;
+            }
+            let key = Keyboard.keyPressed();
+        }
+
+        do Screen.clearScreen();
+
+        return seed;
+    }
+}
+
+
 class RandSeed {
 
     function int getSeed() {

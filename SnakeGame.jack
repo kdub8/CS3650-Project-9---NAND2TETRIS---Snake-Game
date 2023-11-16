@@ -1,4 +1,34 @@
-class SnakeGame {
+/**
+ * SnakeGame Class:
+ * This class manages the Snake game. It keeps track of the Snake itself,
+ * the game grid, score, level, game cycle, and whether the game is paused.
+ * It initializes the game, runs the game loop, handles user input for movement,
+ * collision detection, level progression, and manages game state changes.
+ *
+ * Fields:
+ * - Snake snake: Represents the Snake in the game.
+ * - SnakeGrid grid: Manages the game grid where the Snake moves.
+ * - int score: Tracks the player's score.
+ * - int level: Indicates the current level based on pellets eaten.
+ * - boolean paused: Determines if the game is paused or running.
+ * - int cycle: Tracks the game cycle for timing and control.
+ * - int delay: Specifies the time delay between game cycles.
+ *
+ * Constructors:
+ * - SnakeGame new(): Initializes a new game by setting up the Snake,
+ *   the grid, and initializing game variables such as score, level, and cycle.
+ *
+ * Methods:
+ * - dispose(): Disposes of the game, including the Snake and grid, deallocating memory.
+ * - run(): Runs the game loop, handling user input, movement, collision detection,
+ *   level progression, and game state changes until the game exits.
+ * - nextLevel(): Progresses the game to the next level, updating score, level,
+ *   and possibly decreasing the delay for increased difficulty.
+ * - nextCycle(): Increments the game cycle count by 1 and returns the updated cycle.
+ * - Various reader methods (getGrid, getSnake, getCycle, getScore, getLevel, getPaused):
+ *   Provide access to the game's current state and objects for external usage.
+ */
+ class SnakeGame {
 
     // the Snake
     field Snake snake;
